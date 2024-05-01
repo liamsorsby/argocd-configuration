@@ -9,11 +9,11 @@ spec:
   clusterResourceWhitelist:
     - group: ''
       kind: Namespace
-    - group: ''
+    - group: 'rbac.authorization.k8s.io'
       kind: ClusterRoleBinding
-    - group: ''
+    - group: 'admissionregistration.k8s.io'
       kind: MutatingWebhookConfiguration
-    - group: ''
+    - group: 'rbac.authorization.k8s.io'
       kind: ClusterRole
   destinations:
   - namespace: 'vault'
