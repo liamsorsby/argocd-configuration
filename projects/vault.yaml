@@ -9,6 +9,12 @@ spec:
   clusterResourceWhitelist:
     - group: ''
       kind: Namespace
+    - group: ''
+      kind: ClusterRoleBinding
+    - group: ''
+      kind: MutatingWebhookConfiguration
+    - group: ''
+      kind: ClusterRole
   destinations:
   - namespace: 'vault'
     server: 'https://kubernetes.default.svc'
