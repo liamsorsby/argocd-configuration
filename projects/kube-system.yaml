@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: istiosystem
+  name: kubesystem
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,7 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-  - namespace: 'istio-system'
+  - namespace: 'kube-system'
     server: 'https://kubernetes.default.svc'
   sourceNamespaces:
   - '*'

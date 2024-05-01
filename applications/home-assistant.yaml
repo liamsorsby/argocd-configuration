@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  namespace: argocd
+spec:
+  project: homeautomation
+  source:
+    chart: home-assistant
+    repoURL: http://pajikos.github.io/home-assistant-helm-chart/
+    targetRevision: "0.2.51"
+    helm:
+      version: v3
+      releaseName: istiod
+      valuesObject:
+        persistence:
+          enabled: false
+          storageClass: nfs-storage
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: home-automation
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true

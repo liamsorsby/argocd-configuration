@@ -10,7 +10,11 @@ spec:
     repoURL: https://helm.releases.hashicorp.com
     targetRevision: "0.28.0"
     helm:
+      version: v3
       releaseName: vault
+      parameters:
+        - name: "csi.enabled"
+          value: "true"
       valuesObject:
         server:
           ha:
@@ -28,6 +32,9 @@ spec:
     jqPathExpressions:
     - .webhooks[]?.clientConfig.caBundle
   syncPolicy:
+    managedNamespaceMetadata:
+      labels:
+        istio-injection: enabled
     syncOptions:
       - CreateNamespace=true
     automated:

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: istiosystem
+  name: monitoring
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,7 +10,9 @@ spec:
     - group: '*'
       kind: '*'
   destinations:
-  - namespace: 'istio-system'
+  - namespace: 'monitoring'
+    server: 'https://kubernetes.default.svc'
+  - namespace: 'monitoring-system'
     server: 'https://kubernetes.default.svc'
   sourceNamespaces:
   - '*'
