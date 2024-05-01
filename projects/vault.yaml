@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: vault
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  clusterResourceWhitelist:
+    - group: ''
+      kind: Namespace
+  destinations:
+  - namespace: 'vault'
+    server: 'https://kubernetes.default.svc'
+  sourceNamespaces:
+  - '*'
+  sourceRepos:
+  - '*'
