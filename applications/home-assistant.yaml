@@ -8,7 +8,7 @@ spec:
   source:
     chart: home-assistant
     repoURL: http://pajikos.github.io/home-assistant-helm-chart/
-    targetRevision: "0.2.51"
+    targetRevision: "0.2.78"
     helm:
       version: v3
       releaseName: home-assistant
