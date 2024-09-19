@@ -13,6 +13,8 @@ spec:
       version: v3
       releaseName: home-assistant
       valuesObject:
+        ingress:
+          enabled: true
         configuration:
           enabled: true
           forceInit: true
