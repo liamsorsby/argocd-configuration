@@ -13,8 +13,11 @@ spec:
       version: v3
       releaseName: home-assistant
       valuesObject:
+        configuration:
+          enabled: true
+          forceInit: true
         persistence:
-          enabled: false
+          enabled: true
           storageClass: nfs-storage
   destination:
     server: "https://kubernetes.default.svc"
