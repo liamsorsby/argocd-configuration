@@ -17,7 +17,6 @@ spec:
           enabled: true
         configuration:
           enabled: true
-          forceInit: true
         persistence:
           enabled: true
           storageClass: nfs-storage
