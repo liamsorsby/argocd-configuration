@@ -15,6 +15,7 @@ spec:
       valuesObject:
         configuration:
           enabled: true
+          forceInit: true
           templateConfig: |-
             # Loads default set of integrations. Do not remove.
             default_config:
