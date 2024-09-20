@@ -48,6 +48,9 @@ spec:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
   syncPolicy:
+    managedNamespaceMetadata:
+      labels:
+        istio-injection: enabled
     syncOptions:
       - CreateNamespace=true
     automated:
