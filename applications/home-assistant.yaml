@@ -35,6 +35,8 @@ spec:
         persistence:
           enabled: true
           storageClass: nfs-storage
+        serviceMonitor:
+          enabled: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: home-automation
