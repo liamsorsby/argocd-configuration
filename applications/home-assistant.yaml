@@ -18,6 +18,7 @@ spec:
           forceInit: true
           templateConfig: |-
             # Loads default set of integrations. Do not remove.
+            prometheus:
             default_config:
             http:
               use_x_forwarded_for: true
