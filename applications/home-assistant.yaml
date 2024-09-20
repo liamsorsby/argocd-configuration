@@ -19,6 +19,7 @@ spec:
           templateConfig: |-
             # Loads default set of integrations. Do not remove.
             prometheus:
+              requires_auth: false
             default_config:
             http:
               use_x_forwarded_for: true
