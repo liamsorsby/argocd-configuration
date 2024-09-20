@@ -15,11 +15,10 @@ spec:
       valuesObject:
         prometheus:
           prometheusSpec:
-            serviceMonitorNamespaceSelector:
-              matchExpressions:
-              - key: kubernetes.io/metadata.name
-                operator: Exists
-                values:
+            serviceMonitorNamespaceSelector: 
+              any: true
+            serviceMonitorSelector:
+              matchLabels: {}
             storageSpec:
               volumeClaimTemplate:
                 metadata:
