@@ -14,26 +14,7 @@ spec:
       releaseName: home-assistant
       valuesObject:
         configuration:
-          enabled: true
-          forceInit: true
-          templateConfig: |-
-            # Loads default set of integrations. Do not remove.
-            prometheus:
-              requires_auth: false
-            default_config:
-            http:
-              use_x_forwarded_for: true
-              trusted_proxies:
-                {{- range .Values.configuration.trusted_proxies }}
-                - {{ . }}
-                {{- end }}
-            # Load frontend themes from the themes folder
-            frontend:
-              themes: !include_dir_merge_named themes
-        
-            automation: !include automations.yaml
-            script: !include scripts.yaml
-            scene: !include scenes.yaml
+          enabled: false
         persistence:
           enabled: true
           storageClass: nfs-storage
